@@ -1,0 +1,28 @@
+/* Só o que o CDN do Tailwind não gera: animações personalizadas */
+:root { --ease-out-expo: cubic-bezier(.22, 1, .36, 1); }
+
+.animate-fade     { animation: fade .6s ease both; }
+.animate-expand   { animation: expand .9s var(--ease-out-expo) both; }
+.animate-in-left  { animation: in-left .8s var(--ease-out-expo) both; }
+.animate-in-right { animation: in-right .8s var(--ease-out-expo) both; }
+.animate-grow     { animation: grow .6s var(--ease-out-expo) both; }
+.animate-blink    { animation: blink 1s steps(1) infinite; }
+
+/* variante md: usada nos links da navbar (o CDN não conhece essa animação) */
+@media (min-width: 48rem) {
+  .md\:animate-fade { animation: fade .6s ease both; }
+}
+
+@keyframes fade     { 0% { opacity: 0; } }
+@keyframes expand   { 0% { clip-path: inset(0 50% round 999px); } to { clip-path: inset(0 round 999px); } }
+@keyframes in-left  { 0% { opacity: 0; transform: translate(-70px); } }
+@keyframes in-right { 0% { opacity: 0; transform: translate(70px); } }
+@keyframes grow     { 0% { transform: scaleX(0); } }
+@keyframes blink    { 50% { opacity: 0; } }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, :before { transition: none !important; animation: none !important; }
+}

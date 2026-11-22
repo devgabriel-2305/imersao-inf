@@ -91,7 +91,7 @@ const subjects = {
         importance:
             "É a base para compreender linguagens de programação e desenvolver sistemas.",
 
-        image: ""
+        image: "assets/img-disciplinas/LPimg.png"
     },
 
 
@@ -113,7 +113,7 @@ const subjects = {
         importance:
             "É o primeiro passo para transformar ideias em interfaces para a internet.",
 
-        image: ""
+        image: "assets/img-disciplinas/HTMLimg.png"
     },
 
 
@@ -135,7 +135,7 @@ const subjects = {
         importance:
             "Permite compreender o funcionamento físico dos equipamentos e seus principais componentes.",
 
-        image: ""
+        image: "assets/img-disciplinas/CPUimg.jpg"
     },
 
 
@@ -157,7 +157,7 @@ const subjects = {
         importance:
             "Apresenta como a tecnologia pode ser aplicada na criação de máquinas e soluções automatizadas.",
 
-        image: ""
+        image: "assets/img-disciplinas/ARDimg.jpg"
     },
 
 
@@ -179,7 +179,7 @@ const subjects = {
         importance:
             "Amplia os conhecimentos de desenvolvimento e permite criar aplicações interativas.",
 
-        image: ""
+        image: "assets/img-disciplinas/PWimg.jpg"
     },
 
 
@@ -201,7 +201,7 @@ const subjects = {
         importance:
             "Ajuda a entender o funcionamento dos computadores e a relação entre hardware e software.",
 
-        image: ""
+        image: "assets/img-disciplinas/SOimg.jpg"
     },
 
 
@@ -223,7 +223,7 @@ const subjects = {
         importance:
             "É essencial para desenvolver sistemas capazes de armazenar e gerenciar informações.",
 
-        image: ""
+        image: "assets/img-disciplinas/BDimg.jpg"
     },
 
 
@@ -245,7 +245,7 @@ const subjects = {
         importance:
             "Desenvolve a capacidade de comunicar ideias visualmente por meio de projetos criativos.",
 
-        image: ""
+        image: "assets/img-disciplinas/DSGimg.jpg"
     },
 
 
@@ -267,7 +267,7 @@ const subjects = {
         importance:
             "É fundamental para compreender como dispositivos e sistemas se conectam e compartilham informações.",
 
-        image: ""
+        image: "assets/img-disciplinas/RDimg.jpg"
     }
 
 };

@@ -1,39 +1,667 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imersão | Técnico em Informática</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        blueblack: "#07111F",
-                        bluewhite: "#0B1A30",
-                        bluegreen: "#091522"
-                    },
-                    fontFamily: {
-                        text:[]
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imersão | Técnico em Informática</title>
+  <link rel="shortcut icon" href="assets/logo.webp" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Playfair+Display:ital,wght@1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blueblack: "#07111F",
+            bluewhite: "#0B1A30",
+            bluegreen: "#091522"
+          },
+          fontFamily: {
+            sans:  ['"Space Grotesk"', "system-ui", "sans-serif"],
+            serif: ['"Playfair Display"', "Georgia", "serif"],
+            copy:  ['"DM Sans"', "system-ui", "sans-serif"]
+          }
         }
-    </script>
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-blueblack text-white">
-    <main>
+
+<body class="bg-blueblack text-white antialiased">
+
+  <header id="nav"
+          class="group fixed inset-x-0 top-2.5 z-10 mx-auto grid h-[3.25rem] w-[calc(100%-1.5rem)] grid-cols-[1fr_auto] grid-rows-1 items-center px-4
+                 md:top-5 md:w-[min(86%,1100px)] md:px-6
+                 lg:grid-cols-[1fr_auto_1fr]">
+
+    <div class="absolute inset-0 rounded-full border border-white/10 bg-white/15 backdrop-blur-sm lg:animate-expand lg:backdrop-blur-md"></div>
+
+    <a href="#home"
+       aria-label="Informática - início"
+       class="group/logo relative z-10 flex items-center justify-self-start gap-2.5 animate-fade"
+       style="animation-delay:.6s">
+      <img src="assets/logo.webp" alt="" width="50" height="50"
+           class="size-6 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,.45)] transition-transform duration-300 ease-out
+                  group-hover/logo:-rotate-6 group-hover/logo:scale-110
+                  md:size-[2.5rem]">
+      <span class="text-sm font-bold tracking-wide transition-colors duration-300 group-hover/logo:text-blue-500">INFORMÁTICA</span>
+    </a>
+
+    <nav id="links"
+         aria-label="Principal"
+         class="relative flex items-center gap-5 text-[.8rem] tracking-wide
+                xl:gap-8
+                max-lg:invisible max-lg:absolute max-lg:inset-x-0 max-lg:top-[calc(100%+.5rem)] max-lg:-translate-y-1.5 max-lg:flex-col max-lg:items-stretch max-lg:gap-0
+                max-lg:rounded-3xl max-lg:bg-neutral-900/90 max-lg:py-2 max-lg:opacity-0 max-lg:transition
+                max-lg:group-data-[open]:visible max-lg:group-data-[open]:translate-y-0 max-lg:group-data-[open]:opacity-100">
+      <a href="#home"        class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade" style="animation-delay:.8s"><i class="bi bi-house-door" aria-hidden="true"></i>HOME</a>
+      <a href="#sobre"       class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade" style="animation-delay:.92s"><i class="bi bi-info-circle" aria-hidden="true"></i>SOBRE</a>
+      <a href="#galeria"     class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade" style="animation-delay:1.04s"><i class="bi bi-images" aria-hidden="true"></i>GALERIA</a>
+      <a href="#projetos"    class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade" style="animation-delay:1.16s"><i class="bi bi-folder2-open" aria-hidden="true"></i>PROJETOS</a>
+      <a href="#materias" class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade" style="animation-delay:1.28s"><i class="bi bi-book" aria-hidden="true"></i>DISCIPLINAS</a>
+    </nav>
+
+    <button id="burger"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="links"
+            class="relative -mr-3 grid size-11 cursor-pointer place-content-center gap-[5px] justify-self-end animate-fade lg:hidden"
+            style="animation-delay:.8s">
+      <span class="block h-0.5 w-5 bg-white transition group-data-[open]:translate-y-[3.5px] group-data-[open]:rotate-45"></span>
+      <span class="block h-0.5 w-5 bg-white transition group-data-[open]:-translate-y-[3.5px] group-data-[open]:-rotate-45"></span>
+    </button>
+  </header>
+
+  <main>
+    <section id="home"
+             class="grid min-h-svh place-items-center bg-[#1d2a24] bg-[linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),url('assets/sesmated-2025.jpeg')] bg-cover bg-center bg-no-repeat px-5 pb-12 pt-28">
+      <div class="w-[min(28rem,100%)] text-center">
+
+        <h1>
+          <span class="-mb-[.15em] block font-serif text-[length:clamp(1.4rem,6vw,2.1rem)] font-medium italic animate-fade"
+                style="animation-delay:1.7s">Técnico em</span>
+          <span class="block text-[length:clamp(2rem,11vw,3.3rem)] font-bold leading-[1.1] tracking-[.02em] animate-fade"
+                style="animation-delay:1.9s">INFORMÁTICA</span>
+        </h1>
+
+        <div class="mb-4 mt-2.5 h-[3px] bg-white animate-grow" style="animation-delay:2.1s"></div>
+
+        <div class="grid grid-cols-1 items-stretch gap-4 md:grid-cols-[minmax(0,11rem)_2px_minmax(0,1fr)]">
+          <p class="font-copy text-base leading-relaxed text-white/90 animate-in-left" style="animation-delay:2.5s">
+            Aprenda informática, desenvolva novas habilidades e prepare-se para conquistar oportunidades em um mundo cada vez mais digital.
+          </p>
+
+          <span class="h-0.5 bg-white animate-fade md:h-auto" style="animation-delay:2.5s"></span>
+
+          <div class="terminal overflow-hidden rounded-lg border border-white/15 bg-[#0a0c0e]/80 text-left animate-in-right"
+               style="animation-delay:2.5s"
+               aria-label="Mensagem de boas-vindas">
+            <div class="flex gap-1.5 bg-white/10 px-2.5 py-2">
+              <span class="size-2.5 rounded-full bg-[#ff5f56]"></span>
+              <span class="size-2.5 rounded-full bg-[#ffbd2e]"></span>
+              <span class="size-2.5 rounded-full bg-[#27c93f]"></span>
+            </div>
+            <pre class="min-h-[10rem] whitespace-pre-wrap px-3 py-2.5 font-mono text-[.72rem] leading-relaxed text-[#d7ffe0]"><span id="typed"></span><span class="-mb-[.15em] inline-block h-[1em] w-[.55ch] bg-[#27c93f] animate-blink"></span></pre>
+          </div>
+        </div>
+
+        <a href="#sobre"
+           class="mt-6 inline-block rounded-full border-2 border-white px-9 py-3 font-medium transition-colors animate-fade
+                  hover:bg-white hover:text-neutral-900"
+           style="animation-delay:3.1s">
+          Conheça o curso
+        </a>
+
+        <ul class="mt-7 flex flex-wrap justify-center gap-2.5 font-copy text-sm" aria-label="Áreas do curso">
+          <li class="group/badge inline-flex cursor-default items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 transition duration-300 animate-fade
+                     hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20"
+              style="animation-delay:3.3s">
+            <i class="bi bi-code-slash text-[#27c93f] transition-transform duration-300 group-hover/badge:scale-125" aria-hidden="true"></i>Programação
+          </li>
+          <li class="group/badge inline-flex cursor-default items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 transition duration-300 animate-fade
+                     hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20"
+              style="animation-delay:3.45s">
+            <i class="bi bi-hdd-network text-[#27c93f] transition-transform duration-300 group-hover/badge:scale-125" aria-hidden="true"></i>Redes
+          </li>
+          <li class="group/badge inline-flex cursor-default items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 transition duration-300 animate-fade
+                     hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20"
+              style="animation-delay:3.6s">
+            <i class="bi bi-cpu text-[#27c93f] transition-transform duration-300 group-hover/badge:scale-125" aria-hidden="true"></i>Hardware
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    
+
+    <section class="subjects-section" id="materias">
+
+        <div class="section-container">
+
+            <header class="section-header">
+
+                <span class="section-eyebrow">
+                    <span class="eyebrow-line"></span>
+                    FORMAÇÃO EM TECNOLOGIA
+                </span>
+
+                <h1>
+                    O que você vai aprender em
+                    <span>informática?</span>
+                </h1>
+
+                <p>
+                    Explore as áreas que formam a base do conhecimento
+                    tecnológico e descubra novas possibilidades.
+                </p>
+
+            </header>
+
+
+            
+
+            <div class="subjects-grid">
+
+              
+                <article class="subject-card">
+
+                    <div class="subject-image">
+                        <span class="subject-visual">&lt;/&gt;</span>
+
+                        <span class="subject-number">01</span>
+
+                        <span class="save">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="subject-text">
+
+                        <h2>Lógica de Programação</h2>
+
+                        <p>O início de toda solução.</p>
+
+                        <div class="subject-bottom">
+
+                            <span class="category-tag">FUNDAMENTOS</span>
+
+                            <button class="button" data-subject="logica">
+                                SAIBA MAIS <span>↗</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                
+                <article class="subject-card">
+
+                    <div class="subject-image">
+                        <span class="subject-visual">HTML</span>
+
+                        <span class="subject-number">02</span>
+
+                        <span class="save">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="subject-text">
+
+                        <h2>HTML e CSS</h2>
+
+                        <p>A estrutura e o visual da web.</p>
+
+                        <div class="subject-bottom">
+                            <span class="category-tag">DESENVOLVIMENTO</span>
+
+                            <button class="button" data-subject="html">
+                                SAIBA MAIS <span>↗</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+              
+                <article class="subject-card">
+
+                    <div class="subject-image">
+                        <span class="subject-visual">CPU</span>
+
+                        <span class="subject-number">03</span>
+
+                        <span class="save">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="subject-text">
+
+                        <h2>Arquitetura e Manutenção de Computadores</h2>
+
+                        <p>Conhecendo a máquina por dentro.</p>
+
+                        <div class="subject-bottom">
+                            <span class="category-tag">HARDWARE</span>
+
+                            <button class="button" data-subject="hardware">
+                                SAIBA MAIS <span>↗</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+              
+                <article class="subject-card">
+
+                    <div class="subject-image">
+                        <span class="subject-visual">ROBOT</span>
+
+                        <span class="subject-number">04</span>
+
+                        <span class="save">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="subject-text">
+
+                        <h2>Noções de Robótica</h2>
+
+                        <p>Explorando o mundo da automação.</p>
+
+                        <div class="subject-bottom">
+                            <span class="category-tag">AUTOMAÇÃO</span>
+
+                            <button class="button" data-subject="robotica">
+                                SAIBA MAIS <span>↗</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="subject-card">
+
+                    <div class="subject-image">
+                        <span class="subject-visual">WEB</span>
+
+                        <span class="subject-number">05</span>
+
+                        <span class="save">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="subject-text">
+
+                        <h2>Programação Web</h2>
+
+                        <p>Da ideia à aplicação.</p>
+
+                        <div class="subject-bottom">
+                            <span class="category-tag">DESENVOLVIMENTO</span>
+
+                            <button class="button" data-subject="web">
+                                SAIBA MAIS <span>↗</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+               
+                <article class="subject-card">
+
+                    <div class="subject-image">
+                        <span class="subject-visual">OS</span>
+
+                        <span class="subject-number">06</span>
+
+                        <span class="save">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="subject-text">
+
+                        <h2>Sistemas Operacionais</h2>
+
+                        <p>A base do funcionamento digital.</p>
+
+                        <div class="subject-bottom">
+                            <span class="category-tag">SISTEMAS</span>
+
+                            <button class="button" data-subject="sistemas">
+                                SAIBA MAIS <span>↗</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                
+                <article class="subject-card">
+
+                    <div class="subject-image">
+                        <span class="subject-visual">SQL</span>
+
+                        <span class="subject-number">07</span>
+
+                        <span class="save">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="subject-text">
+
+                        <h2>Banco de Dados</h2>
+
+                        <p>Informação organizada e acessível.</p>
+
+                        <div class="subject-bottom">
+                            <span class="category-tag">DADOS</span>
+
+                            <button class="button" data-subject="banco">
+                                SAIBA MAIS <span>↗</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                
+                <article class="subject-card">
+
+                    <div class="subject-image">
+                        <span class="subject-visual">DESIGN</span>
+
+                        <span class="subject-number">08</span>
+
+                        <span class="save">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="subject-text">
+
+                        <h2>Design Gráfico</h2>
+
+                        <p>Ideias transformadas em imagens.</p>
+
+                        <div class="subject-bottom">
+                            <span class="category-tag">CRIATIVIDADE</span>
+
+                            <button class="button" data-subject="design">
+                                SAIBA MAIS <span>↗</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                
+                <article class="subject-card">
+
+                    <div class="subject-image">
+                        <span class="subject-visual">NET</span>
+
+                        <span class="subject-number">09</span>
+
+                        <span class="save">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="subject-text">
+
+                        <h2>Redes de Computadores</h2>
+
+                        <p>A conexão entre sistemas.</p>
+
+                        <div class="subject-bottom">
+                            <span class="category-tag">CONECTIVIDADE</span>
+
+                            <button class="button" data-subject="redes">
+                                SAIBA MAIS <span>↗</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+
+
+        </div>
+
+    </section>
+
+
+
+
+  
+
+    <div class="modal-overlay" id="subjectModal" aria-hidden="true">
+
+        <article
+            class="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+        >
+
+            <button
+                class="modal-close"
+                id="closeModal"
+                aria-label="Fechar"
+            >
+                &times;
+            </button>
+
+
+            
+
+            <div class="modal-image-area">
+
+                <img id="modalImage" src="" alt="" hidden>
+
+                <div class="image-placeholder" id="imagePlaceholder">
+                    <span>IMAGEM DA MATÉRIA</span>
+                </div>
+
+                <span class="modal-category">
+                    FORMAÇÃO EM INFORMÁTICA
+                </span>
+
+            </div>
+
+
+           
+
+            <div class="modal-content">
+
+                <span class="modal-label" id="modalNumber">
+                    MATÉRIA 01
+                </span>
+
+                <h2 id="modalTitle">
+                    Nome da matéria
+                </h2>
+
+                <p
+                    class="modal-description"
+                    id="modalDescription"
+                ></p>
+
+                <div class="modal-divider"></div>
+
+                <h3>O que você vai aprender?</h3>
+
+                <ul id="modalTopics"></ul>
+
+                <div class="modal-highlight">
+                    <span class="highlight-symbol">✦</span>
+                    <p id="modalImportance"></p>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+     <!--PROJETOS-->
         <section class="p-8">
-            <h2 class="font-semibold text-2xl text-center">Ideias que viram projetos</h2>
-            <div>
-                <div class="pj-01">
-                    <img src="" alt="">
-                    <div></div>
+            <div class="container mx-auto">
+                <span class="text-sky-400 font-medium">Desenvolvimento de Software</span>
+                <h2 class="font-semibold text-3xl pb-8">Ideias que viram <span class="text-sky-400">Projetos</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="pj rounded-lg overflow-hidden border border-gray-800">
+                        <div class="relative">
+                            <img src="assets/projetos/pj-01.png" alt="" class="h-64 w-full object-cover">
+                            <div class="dev"><img src="assets/logo.webp" alt="logo Informática" class="h-8"></div>
+                        </div>
+                        <div class="bg-bluewhite p-4 pb-8">
+                            <h3 class="font-medium text-xl py-2">Portal Salaberga</h3>
+                            <p class="text-sm text-gray-400 pb-5">Portal desenvolvido pela Área DEV do curso Técnico em Informática para apresentar a escola e suas principais informações por meio de uma plataforma digital.</p>
+                            <div class="flex items-center justify-between">
+                                <span><a href="https://salaberga.com/" target="_blank" class="bg-green-600 px-4 py-[6px] font-medium rounded-md">Acesse aqui</a></span>
+                                <img src="assets/logo.webp" alt="" class="h-8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pj rounded-lg overflow-hidden border border-gray-800">
+                      <div class="relative">
+                            <img src="assets/projetos/pj-02.png" alt="" class="h-64 w-full object-cover">
+                            <div class="dev"><img src="assets/logo.webp" alt="logo Informática" class="h-8"></div>
+                        </div>
+                        <div class="bg-bluewhite p-4 pb-8">
+                            <h3 class="font-medium text-xl py-2">Vox Sneakers</h3>
+                            <p class="pb-4 text-sm text-gray-400 pb-5">Loja virtual de tênis desenvolvida por alunos do curso Técnico em Informática para aprimorar conhecimentos em desenvolvimento web e comércio digital e etc.</p>
+                            <div class="flex items-center justify-between">
+                                <span><a href="https://voxsneakersemp.netlify.app/" target="_blank" class="bg-green-600 px-4 py-[6px] font-medium rounded-md">Acesse aqui</a></span>
+                                <img src="assets/logo.webp" alt="" class="h-8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pj rounded-lg overflow-hidden border border-gray-800">
+                        <div class="relative">
+                            <img src="assets/projetos/pj-03.png" alt="" class="h-64 w-full object-cover">
+                            <div class="dev"><img src="assets/logo.webp" alt="logo Informática" class="h-8"></div>
+                        </div>
+                        <div class="bg-bluewhite p-4 pb-8">
+                            <h3 class="font-medium text-xl py-2">M7 Estética Automotiva</h3>
+                            <p class="pb-4 text-sm text-gray-400 pb-5">Site institucional desenvolvido por alunos do curso Técnico em Informática para apresentar serviços automotivos e aprimorar conhecimentos em desenvolvimento web.</p>
+                           <div class="flex items-center justify-between">
+                                <span><a href="https://m7esteticautomotiva1.netlify.app/" target="_blank" class="bg-green-600 px-4 py-[6px] font-medium rounded-md">Acesse aqui</a></span>
+                                <img src="assets/logo.webp" alt="" class="h-8">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="pj rounded-lg overflow-hidden border border-gray-800">
+                        <div class="relative">
+                            <img src="assets/projetos/pj-04.png" alt="" class="h-64 w-full object-cover">
+                            <div class="dev"><img src="assets/logo.webp" alt="logo Informática" class="h-8"></div>
+                        </div>
+                        <div class="bg-bluewhite p-4 pb-8">
+                            <h3 class="font-medium text-xl py-2">Sistema de Seleção</h3>
+                            <p class="pb-4 text-sm text-gray-400 pb-5">Sistema de Seleção de alunos novotos, desenvolvido pela a área DEV do curso de Informática, atualmente utilizado por várias escolas da CREDE.</p>
+                            <div class="flex items-center justify-between">
+                                <span><a href="https://crede1.salaberga.com/app/subsystems/gerenciador_escolas/index.php" target="_blank" class="bg-green-600 px-4 py-[6px] font-medium rounded-md">Acesse aqui</a></span>
+                                <i class="bi bi-person-workspace"></i>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="pj rounded-lg overflow-hidden border border-gray-800">
+                       <div class="relative">
+                            <img src="assets/projetos/pj-05.png" alt="" class="h-64 w-full object-cover">
+                            <div class="dev"><img src="assets/logo.webp" alt="logo Informática" class="h-8"></div>
+                        </div>
+                        <div class="bg-bluewhite p-4 pb-8">
+                            <h3 class="font-medium text-xl py-2">SnapPDF</h3>
+                            <p class="pb-4 text-sm text-gray-400 pb-5">Mini sistema de converter arquivos em PDF, desenvolvido com o objetivo de aprimorar o desenvolvimento web entre outras práticas que são levadas em considerações.</p>
+                            <div class="flex items-center justify-between">
+                                <span><a href="https://snappdf.freedev.app/?i=1" target="_blank" class="bg-green-600 px-4 py-[6px] font-medium rounded-md">Acesse aqui</a></span>
+                                <img src="assets/logo.webp" alt="" class="h-8">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="pj rounded-lg overflow-hidden border border-gray-800">
+                        <div class="relative">
+                            <img src="assets/projetos/pj-06.png" alt="" class="h-64 w-full object-cover">
+                            <div class="dev"><img src="assets/logo.webp" alt="logo Informática" class="h-8"></div>
+                        </div>
+                        <div class="bg-bluewhite p-4 pb-8">
+                            <h3 class="font-medium text-xl py-2">GD Academias</h3>
+                            <p class="pb-4 text-sm text-gray-400 pb-5">Página web desenvolvida por um aluno do curso de Informática como atividade prática de desenvolvimento web, com foco na criação de um site para uma academia fictícia.</p>
+                            <div class="flex items-center justify-between">
+                                <span><a href="https://devgabriel-2305.github.io/gd-academias/" target="_blank" class="bg-green-600 px-4 py-[6px] font-medium rounded-md">Acesse aqui</a></span>
+                                <img src="assets/logo.webp" alt="" class="h-8">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
+
+    
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

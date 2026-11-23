@@ -808,6 +808,15 @@ body {
         font-size: 26px;
     }
 }
+@media (prefers-reduced-motion: reduce) {
+    ::before,
+    ::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+
+}
 /*PROJETOS*/
 .pj{
     transition-duration: .3s;
@@ -827,18 +836,6 @@ body {
      top: 10px;
      right: 10px;
      color: black;
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-    }
-
 }
 
 

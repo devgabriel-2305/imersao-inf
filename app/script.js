@@ -23,10 +23,12 @@
   const output = document.getElementById("typed");
 
   const lines = [
-    "$ ./bem-vindo.sh",
-    "Olá, futuro(a) dev!",
-    "Seja bem-vindo(a) ao Técnico em Informática. Aqui você aprende, cria e transforma ideias em tecnologia.",
-    "$ iniciar_jornada --agora"
+   "$ cat curso.txt",
+    "Bem-vindo ao Técnico em Informática!",
+    "> Programação e lógica",
+    "> Web, redes e hardware",
+    "> Projetos reais em equipe",
+    "$ iniciar_carreira --agora"
   ];
 
   const DELAY = { text: 22, command: 55, line: 300, fallback: 4500 };

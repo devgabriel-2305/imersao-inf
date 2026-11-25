@@ -9,18 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Playfair+Display:ital,wght@1,500&family=DM+Sans:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,500&family=DM+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-
 
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script>
@@ -49,7 +40,7 @@
 
     <header id="nav" class="group fixed inset-x-0 top-2.5 z-10 mx-auto grid h-[3.25rem] w-[calc(100%-1.5rem)] grid-cols-[1fr_auto] grid-rows-1 items-center px-4
                  md:top-5 md:w-[min(86%,1100px)] md:px-6
-                 lg:grid-cols-[1fr_auto_1fr]">
+                 lg:grid-cols-[auto_1fr] xl:grid-cols-[1fr_auto_1fr]">
 
         <div
             class="absolute inset-0 rounded-full border border-white/10 bg-white/15 backdrop-blur-sm lg:animate-expand lg:backdrop-blur-md">
@@ -67,25 +58,25 @@
 
         <nav id="links" aria-label="Principal"
             class="relative flex items-center gap-5 text-[.8rem] tracking-wide
-                xl:gap-8
+                lg:justify-self-end xl:justify-self-center xl:gap-8 lg:max-xl:[&_i]:hidden
                 max-lg:invisible max-lg:absolute max-lg:inset-x-0 max-lg:top-[calc(100%+.5rem)] max-lg:-translate-y-1.5 max-lg:flex-col max-lg:items-stretch max-lg:gap-0
                 max-lg:rounded-3xl max-lg:bg-neutral-900/90 max-lg:py-2 max-lg:opacity-0 max-lg:transition
                 max-lg:group-data-[open]:visible max-lg:group-data-[open]:translate-y-0 max-lg:group-data-[open]:opacity-100">
             <a href="#home"
                 class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade"
                 style="animation-delay:.8s"><i class="bi bi-house-door" aria-hidden="true"></i>HOME</a>
-            <a href="#sobre"
+            <a href="#materias"
                 class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade"
-                style="animation-delay:.92s"><i class="bi bi-info-circle" aria-hidden="true"></i>SOBRE</a>
-            <a href="#galeria"
-                class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade"
-                style="animation-delay:1.04s"><i class="bi bi-images" aria-hidden="true"></i>GALERIA</a>
+                style="animation-delay:1.04s"><i class="bi bi-book" aria-hidden="true"></i>DISCIPLINAS</a>
             <a href="#projetos"
                 class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade"
                 style="animation-delay:1.16s"><i class="bi bi-folder2-open" aria-hidden="true"></i>PROJETOS</a>
-            <a href="#materias"
+            <a href="#atuacao"
                 class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade"
-                style="animation-delay:1.28s"><i class="bi bi-book" aria-hidden="true"></i>DISCIPLINAS</a>
+                style="animation-delay:1.28s"><i class="bi bi-briefcase" aria-hidden="true"></i>ATUAÇÃO</a>
+            <a href="#galeria"
+                class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade"
+                style="animation-delay:1.4s"><i class="bi bi-images" aria-hidden="true"></i>GALERIA</a>
         </nav>
 
         <button id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="links"
@@ -135,7 +126,7 @@
                     </div>
                 </div>
 
-                <a href="#sobre" class="mt-6 inline-block rounded-full border-2 border-white px-9 py-3 font-medium transition-colors animate-fade
+                <a href="#materias" class="mt-6 inline-block rounded-full border-2 border-white px-9 py-3 font-medium transition-colors animate-fade
                   hover:bg-white hover:text-neutral-900" style="animation-delay:3.1s">
                     Conheça o curso
                 </a>
@@ -162,7 +153,7 @@
         </section>
 
 
-
+        <!--DISCIPLINAS-->
         <section class="subjects-section" id="materias">
 
             <div class="section-container">
@@ -186,341 +177,219 @@
 
                 </header>
 
-
-
-
-                <div class="subjects-grid">
-
+                <div class="subjects-grid" id="subjectsTrack">
 
                     <article class="subject-card">
-
                         <div class="subject-image">
                             <span class="subject-visual">&lt;/&gt;</span>
-
                             <span class="subject-number">01</span>
-
                             <span class="save">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z" />
                                 </svg>
                             </span>
                         </div>
-
                         <div class="subject-text">
-
                             <h2>Lógica de Programação</h2>
-
                             <p>O início de toda solução.</p>
-
                             <div class="subject-bottom">
-
                                 <span class="category-tag">FUNDAMENTOS</span>
-
                                 <button class="button" data-subject="logica">
                                     SAIBA MAIS <span>↗</span>
                                 </button>
-
                             </div>
-
                         </div>
-
                     </article>
 
-
-
                     <article class="subject-card">
-
                         <div class="subject-image">
                             <span class="subject-visual">HTML</span>
-
                             <span class="subject-number">02</span>
-
                             <span class="save">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z" />
                                 </svg>
                             </span>
                         </div>
-
                         <div class="subject-text">
-
                             <h2>HTML e CSS</h2>
-
                             <p>A estrutura e o visual da web.</p>
-
                             <div class="subject-bottom">
                                 <span class="category-tag">DESENVOLVIMENTO</span>
-
                                 <button class="button" data-subject="html">
                                     SAIBA MAIS <span>↗</span>
                                 </button>
                             </div>
-
                         </div>
-
                     </article>
 
-
-
                     <article class="subject-card">
-
                         <div class="subject-image">
                             <span class="subject-visual">CPU</span>
-
                             <span class="subject-number">03</span>
-
                             <span class="save">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z" />
                                 </svg>
                             </span>
                         </div>
-
                         <div class="subject-text">
-
                             <h2>Arquitetura e Manutenção de Computadores</h2>
-
                             <p>Conhecendo a máquina por dentro.</p>
-
                             <div class="subject-bottom">
                                 <span class="category-tag">HARDWARE</span>
-
                                 <button class="button" data-subject="hardware">
                                     SAIBA MAIS <span>↗</span>
                                 </button>
                             </div>
-
                         </div>
-
                     </article>
 
-
-
                     <article class="subject-card">
-
                         <div class="subject-image">
                             <span class="subject-visual">ROBOT</span>
-
                             <span class="subject-number">04</span>
-
                             <span class="save">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z" />
                                 </svg>
                             </span>
                         </div>
-
                         <div class="subject-text">
-
                             <h2>Noções de Robótica</h2>
-
                             <p>Explorando o mundo da automação.</p>
-
                             <div class="subject-bottom">
                                 <span class="category-tag">AUTOMAÇÃO</span>
-
                                 <button class="button" data-subject="robotica">
                                     SAIBA MAIS <span>↗</span>
                                 </button>
                             </div>
-
                         </div>
-
                     </article>
 
-
                     <article class="subject-card">
-
                         <div class="subject-image">
                             <span class="subject-visual">WEB</span>
-
                             <span class="subject-number">05</span>
-
                             <span class="save">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z" />
                                 </svg>
                             </span>
                         </div>
-
                         <div class="subject-text">
-
                             <h2>Programação Web</h2>
-
                             <p>Da ideia à aplicação.</p>
-
                             <div class="subject-bottom">
                                 <span class="category-tag">DESENVOLVIMENTO</span>
-
                                 <button class="button" data-subject="web">
                                     SAIBA MAIS <span>↗</span>
                                 </button>
                             </div>
-
                         </div>
-
                     </article>
 
-
-
                     <article class="subject-card">
-
                         <div class="subject-image">
                             <span class="subject-visual">OS</span>
-
                             <span class="subject-number">06</span>
-
                             <span class="save">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z" />
                                 </svg>
                             </span>
                         </div>
-
                         <div class="subject-text">
-
                             <h2>Sistemas Operacionais</h2>
-
                             <p>A base do funcionamento digital.</p>
-
                             <div class="subject-bottom">
                                 <span class="category-tag">SISTEMAS</span>
-
                                 <button class="button" data-subject="sistemas">
                                     SAIBA MAIS <span>↗</span>
                                 </button>
                             </div>
-
                         </div>
-
                     </article>
 
-
-
                     <article class="subject-card">
-
                         <div class="subject-image">
                             <span class="subject-visual">SQL</span>
-
                             <span class="subject-number">07</span>
-
                             <span class="save">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z" />
                                 </svg>
                             </span>
                         </div>
-
                         <div class="subject-text">
-
                             <h2>Banco de Dados</h2>
-
                             <p>Informação organizada e acessível.</p>
-
                             <div class="subject-bottom">
                                 <span class="category-tag">DADOS</span>
-
                                 <button class="button" data-subject="banco">
                                     SAIBA MAIS <span>↗</span>
                                 </button>
                             </div>
-
                         </div>
-
                     </article>
 
-
-
                     <article class="subject-card">
-
                         <div class="subject-image">
                             <span class="subject-visual">DESIGN</span>
-
                             <span class="subject-number">08</span>
-
                             <span class="save">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z" />
                                 </svg>
                             </span>
                         </div>
-
                         <div class="subject-text">
-
                             <h2>Design Gráfico</h2>
-
                             <p>Ideias transformadas em imagens.</p>
-
                             <div class="subject-bottom">
                                 <span class="category-tag">CRIATIVIDADE</span>
-
                                 <button class="button" data-subject="design">
                                     SAIBA MAIS <span>↗</span>
                                 </button>
                             </div>
-
                         </div>
-
                     </article>
 
-
-
                     <article class="subject-card">
-
                         <div class="subject-image">
                             <span class="subject-visual">NET</span>
-
                             <span class="subject-number">09</span>
-
                             <span class="save">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5V22l-6-3.8L6 22V4.5Z" />
                                 </svg>
                             </span>
                         </div>
-
                         <div class="subject-text">
-
                             <h2>Redes de Computadores</h2>
-
                             <p>A conexão entre sistemas.</p>
-
                             <div class="subject-bottom">
                                 <span class="category-tag">CONECTIVIDADE</span>
-
                                 <button class="button" data-subject="redes">
                                     SAIBA MAIS <span>↗</span>
                                 </button>
                             </div>
-
                         </div>
-
                     </article>
-
                 </div>
-
-
-
 
             </div>
 
         </section>
 
 
-
-
-
-
         <div class="modal-overlay" id="subjectModal" aria-hidden="true">
 
-            <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" data-lenis-prevent>
 
                 <button class="modal-close" id="closeModal" aria-label="Fechar">
                     &times;
                 </button>
-
-
-
 
                 <div class="modal-image-area">
 
@@ -535,9 +404,6 @@
                     </span>
 
                 </div>
-
-
-
 
                 <div class="modal-content">
 
@@ -568,8 +434,9 @@
 
         </div>
 
+
         <!--PROJETOS-->
-        <section class="px-8 py-24">
+        <section id="projetos" class="px-8 py-24 overflow-hidden">
             <div class="container mx-auto">
                 <div class="flex items-center gap-3 mb-4">
                     <span class="w-8 h-[2px] bg-sky-400"></span>
@@ -584,7 +451,8 @@
                     Transformando criatividade e conhecimento em soluções digitais por meio da programação.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsTrack">
+
                     <div class="pj rounded-lg overflow-hidden border border-gray-800 flex flex-col h-full">
                         <div class="relative">
                             <img src="assets/projetos/pj-01.png" alt="" class="h-64 w-full object-cover">
@@ -592,16 +460,15 @@
                         </div>
                         <div class="bg-bluewhite p-4 pb-8 flex flex-col flex-1">
                             <h3 class="font-medium text-xl py-2">Portal Salaberga</h3>
-                            <p class="text-sm text-gray-400 pb-5">Portal desenvolvido pela Área DEV do curso Técnico em
-                                Informática para apresentar a escola e suas principais informações por meio de uma
-                                plataforma digital.</p>
+                            <p class="text-sm text-gray-400 pb-5">Portal desenvolvido pela Área DEV do curso Técnico em Informática para apresentar a escola e suas principais informações por meio de uma plataforma digital.</p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span><a href="https://salaberga.com/" target="_blank"
+                                <span><a href="https://salaberga.com/" target="_blank" rel="noopener"
                                         class="bg-green-600 px-4 py-[8px] font-medium rounded-md">Acesse aqui</a></span>
-                                <img src="assets/programador (1).png" alt="" class="h-8 text-white">
+                                <img src="assets/programador (1).png" alt="" class="h-8">
                             </div>
                         </div>
                     </div>
+
                     <div class="pj rounded-lg overflow-hidden border border-gray-800 flex flex-col h-full">
                         <div class="relative">
                             <img src="assets/projetos/pj-02.png" alt="" class="h-64 w-full object-cover">
@@ -609,16 +476,15 @@
                         </div>
                         <div class="bg-bluewhite p-4 pb-8 flex flex-col flex-1">
                             <h3 class="font-medium text-xl py-2">Vox Sneakers</h3>
-                            <p class="pb-4 text-sm text-gray-400 pb-5">Loja virtual de tênis desenvolvida por alunos do
-                                curso Técnico em Informática para aprimorar conhecimentos em desenvolvimento web e
-                                comércio digital e etc.</p>
+                            <p class="text-sm text-gray-400 pb-5">Loja virtual de tênis desenvolvida por alunos do curso Técnico em Informática para aprimorar conhecimentos em desenvolvimento web e comércio digital.</p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span><a href="https://voxsneakersemp.netlify.app/" target="_blank"
+                                <span><a href="https://voxsneakersemp.netlify.app/" target="_blank" rel="noopener"
                                         class="bg-green-600 px-4 py-[8px] font-medium rounded-md">Acesse aqui</a></span>
                                 <img src="assets/programador (1).png" alt="" class="h-8">
                             </div>
                         </div>
                     </div>
+
                     <div class="pj rounded-lg overflow-hidden border border-gray-800 flex flex-col h-full">
                         <div class="relative">
                             <img src="assets/projetos/pj-03.png" alt="" class="h-64 w-full object-cover">
@@ -626,16 +492,15 @@
                         </div>
                         <div class="bg-bluewhite p-4 pb-8 flex flex-col flex-1">
                             <h3 class="font-medium text-xl py-2">M7 Estética Automotiva</h3>
-                            <p class="pb-4 text-sm text-gray-400 pb-5">Site institucional desenvolvido por alunos do
-                                curso Técnico em Informática para apresentar serviços automotivos e aprimorar
-                                conhecimentos em desenvolvimento web.</p>
+                            <p class="text-sm text-gray-400 pb-5">Site institucional desenvolvido por alunos do curso Técnico em Informática para apresentar serviços automotivos e aprimorar conhecimentos em desenvolvimento web.</p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span><a href="https://m7esteticautomotiva1.netlify.app/" target="_blank"
+                                <span><a href="https://m7esteticautomotiva1.netlify.app/" target="_blank" rel="noopener"
                                         class="bg-green-600 px-4 py-[8px] font-medium rounded-md">Acesse aqui</a></span>
                                 <img src="assets/programador (1).png" alt="" class="h-8">
                             </div>
                         </div>
                     </div>
+
                     <div class="pj rounded-lg overflow-hidden border border-gray-800 flex flex-col h-full">
                         <div class="relative">
                             <img src="assets/projetos/pj-04.png" alt="" class="h-64 w-full object-cover">
@@ -643,17 +508,15 @@
                         </div>
                         <div class="bg-bluewhite p-4 pb-8 flex flex-col flex-1">
                             <h3 class="font-medium text-xl py-2">Sistema de Seleção</h3>
-                            <p class="pb-4 text-sm text-gray-400 pb-5">Sistema de Seleção de alunos novotos,
-                                desenvolvido pela a área DEV do curso de Informática, atualmente utilizado por várias
-                                escolas da CREDE.</p>
+                            <p class="text-sm text-gray-400 pb-5">Sistema de seleção de alunos novatos, desenvolvido pela área DEV do curso de Informática, atualmente utilizado por várias escolas da CREDE.</p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span><a href="https://crede1.salaberga.com/app/subsystems/gerenciador_escolas/index.php"
-                                        target="_blank" class="bg-green-600 px-4 py-[8px] font-medium rounded-md">Acesse
-                                        aqui</a></span>
+                                <span><a href="https://crede1.salaberga.com/app/subsystems/gerenciador_escolas/index.php" target="_blank" rel="noopener"
+                                        class="bg-green-600 px-4 py-[8px] font-medium rounded-md">Acesse aqui</a></span>
                                 <img src="assets/programador (1).png" alt="" class="h-8">
                             </div>
                         </div>
                     </div>
+
                     <div class="pj rounded-lg overflow-hidden border border-gray-800 flex flex-col h-full">
                         <div class="relative">
                             <img src="assets/projetos/pj-05.png" alt="" class="h-64 w-full object-cover">
@@ -661,16 +524,15 @@
                         </div>
                         <div class="bg-bluewhite p-4 pb-8 flex flex-col flex-1">
                             <h3 class="font-medium text-xl py-2">SnapPDF</h3>
-                            <p class="pb-4 text-sm text-gray-400 pb-5">Mini sistema de converter arquivos em PDF,
-                                desenvolvido com o objetivo de aprimorar o desenvolvimento web entre outras práticas que
-                                são levadas em considerações.</p>
+                            <p class="text-sm text-gray-400 pb-5">Mini sistema de converter arquivos em PDF, desenvolvido com o objetivo de aprimorar o desenvolvimento web entre outras práticas que são levadas em consideração.</p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span><a href="https://snappdf.freedev.app/?i=1" target="_blank"
+                                <span><a href="https://snappdf.freedev.app/?i=1" target="_blank" rel="noopener"
                                         class="bg-green-600 px-4 py-[8px] font-medium rounded-md">Acesse aqui</a></span>
                                 <img src="assets/programador (1).png" alt="" class="h-8">
                             </div>
                         </div>
                     </div>
+
                     <div class="pj rounded-lg overflow-hidden border border-gray-800 flex flex-col h-full">
                         <div class="relative">
                             <img src="assets/projetos/pj-06.png" alt="" class="h-64 w-full object-cover">
@@ -678,11 +540,9 @@
                         </div>
                         <div class="bg-bluewhite p-4 pb-8 flex flex-col flex-1">
                             <h3 class="font-medium text-xl py-2">GD Academias</h3>
-                            <p class="pb-4 text-sm text-gray-400 pb-5">Página web desenvolvida por um aluno do curso de
-                                Informática como atividade prática de desenvolvimento web, com foco na criação de um
-                                site para uma academia fictícia.</p>
+                            <p class="text-sm text-gray-400 pb-5">Página web desenvolvida por um aluno do curso de Informática como atividade prática de desenvolvimento web, com foco na criação de um site para uma academia fictícia.</p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span><a href="https://devgabriel-2305.github.io/gd-academias/" target="_blank"
+                                <span><a href="https://devgabriel-2305.github.io/gd-academias/" target="_blank" rel="noopener"
                                         class="bg-green-600 px-4 py-[8px] font-medium rounded-md">Acesse aqui</a></span>
                                 <img src="assets/programador (1).png" alt="" class="h-8">
                             </div>
@@ -694,8 +554,77 @@
         </section>
 
 
+        <!--ÁREAS DE ATUAÇÃO-->
+        <section class="areas-section" id="atuacao">
+
+            <div class="section-container">
+
+                <header class="section-header">
+
+                    <span class="section-eyebrow">
+                        <span class="eyebrow-line"></span>
+                        MERCADO DE TRABALHO
+                    </span>
+
+                    <h2>
+                        Onde você pode
+                        <span>atuar?</span>
+                    </h2>
+
+                    <p>
+                        Escolha uma área para ver o que se faz no dia a dia, quais ferramentas
+                        entram em cena e quais disciplinas do curso preparam você.
+                    </p>
+
+                </header>
+
+                <div class="areas-layout">
+
+                    <div class="areas-tabs" id="areasTabs" role="tablist" aria-label="Áreas de atuação"></div>
+
+                    <article class="area-panel" id="areaPanel" role="tabpanel" tabindex="0">
+
+                        <span class="area-glyph" id="areaGlyph" aria-hidden="true"></span>
+
+                        <div class="area-body" id="areaBody">
+
+                            <h3 id="areaTitle"></h3>
+                            <p class="area-lead" id="areaLead"></p>
+
+                            <div class="area-columns">
+                                <div>
+                                    <h4>No dia a dia</h4>
+                                    <ul class="area-list" id="areaTasks"></ul>
+                                </div>
+                                <div>
+                                    <h4>Ferramentas e conceitos</h4>
+                                    <ul class="area-chips" id="areaTools"></ul>
+                                </div>
+                            </div>
+
+                            <div class="area-block">
+                                <h4>Cargos para começar</h4>
+                                <ul class="area-roles" id="areaRoles"></ul>
+                            </div>
+
+                            <div class="area-courses">
+                                <h4>Disciplinas do curso que preparam você</h4>
+                                <div class="area-course-list" id="areaCourses"></div>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="script.js"></script>
 </body>
 

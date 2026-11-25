@@ -1482,6 +1482,70 @@ body {
 
 
 
+/* ============================================================
+   CARROSSEL MOBILE — Disciplinas e Projetos
+   (fica por último para vencer as regras acima)
+   ============================================================ */
+@media (max-width: 767px) {
+
+    .carousel-track {
+        display: flex;
+        justify-content: flex-start;
+        /* corrige os cards cortados à esquerda */
+        align-items: stretch;
+        gap: 16px;
+
+        /* ocupa a largura toda da tela, mesmo dentro de containers com padding */
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 12px 24px 22px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 24px;
+        scroll-behavior: smooth;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel-track>* {
+        flex: 0 0 min(78vw, 300px);
+        width: min(78vw, 300px);
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    /* o id vence o grid do Tailwind na seção de projetos */
+    #projectsTrack {
+        display: flex;
+        justify-content: flex-start;
+        gap: 16px;
+    }
+
+    #projectsTrack>.pj {
+        flex: 0 0 min(80vw, 330px);
+        width: min(80vw, 330px);
+    }
+
+    .carousel-ui {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        margin-top: 4px;
+    }
+}
+
 
 
 
@@ -1777,4 +1841,36 @@ body {
         align-items: flex-start;
         gap: 10px;
     }
+}
+
+
+
+
+
+@media (max-width: 767px) {
+
+    .carousel-track {
+        display: flex;
+        justify-content: flex-start;
+        /* <- ESSA LINHA resolve */
+        gap: 16px;
+
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 12px 24px 22px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 24px;
+        scroll-behavior: smooth;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    /* ... resto igual ... */
 }

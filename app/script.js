@@ -643,6 +643,14 @@ const areas = [
    CARROSSEL MOBILE (Disciplinas e Projetos)
    Rolagem nativa com scroll-snap + setas e indicadores
    ============================================================ */
+
+
+
+   /* ============================================================
+   CARROSSEL MOBILE (Disciplinas e Projetos)
+   Rolagem nativa com scroll-snap + setas e indicadores
+   ============================================================ */
+
 function createCarousel(track, label) {
     if (!track) return;
 
@@ -685,6 +693,7 @@ function createCarousel(track, label) {
     ui.append(prev, dotsEl, next);
     track.after(ui);
 
+    const maxScroll = () => track.scrollWidth - track.clientWidth;
     const padLeft = () => parseFloat(getComputedStyle(track).scrollPaddingLeft) || 0;
 
     const leftOf = (el) =>
@@ -694,8 +703,7 @@ function createCarousel(track, label) {
         padLeft();
 
     const activeIndex = () => {
-        const max = track.scrollWidth - track.clientWidth;
-        if (track.scrollLeft >= max - 4) return items.length - 1;
+        if (track.scrollLeft >= maxScroll() - 4) return items.length - 1;
 
         let best = 0;
         let bestDistance = Infinity;
@@ -713,8 +721,10 @@ function createCarousel(track, label) {
 
     function goTo(index) {
         const i = Math.max(0, Math.min(items.length - 1, index));
+        // limita ao scroll máximo para não travar nos últimos cards
+        const left = Math.max(0, Math.min(leftOf(items[i]), maxScroll()));
         track.scrollTo({
-            left: leftOf(items[i]),
+            left,
             behavior: prefersReduced ? "auto" : "smooth"
         });
     }
@@ -730,8 +740,8 @@ function createCarousel(track, label) {
             else dot.removeAttribute("aria-current");
         });
 
-        prev.disabled = active === 0;
-        next.disabled = active === items.length - 1;
+        prev.disabled = track.scrollLeft <= 4;
+        next.disabled = track.scrollLeft >= maxScroll() - 4;
         ticking = false;
     };
 

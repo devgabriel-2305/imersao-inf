@@ -643,14 +643,6 @@ const areas = [
    CARROSSEL MOBILE (Disciplinas e Projetos)
    Rolagem nativa com scroll-snap + setas e indicadores
    ============================================================ */
-
-
-
-   /* ============================================================
-   CARROSSEL MOBILE (Disciplinas e Projetos)
-   Rolagem nativa com scroll-snap + setas e indicadores
-   ============================================================ */
-
 function createCarousel(track, label) {
     if (!track) return;
 

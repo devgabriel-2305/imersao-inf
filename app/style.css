@@ -719,30 +719,6 @@ body {
     font-size: 12px;
     line-height: 1.7;
 }
-
-
-/* ============================================================
-   PROJETOS
-   ============================================================ */
-.pj {
-    transition-duration: .3s;
-}
-.pj:hover {
-    border-color: rgb(50, 85, 50);
-    transform: translateY(-5px);
-}
-.pj img {
-    transition: transform .4s ease;
-}
-.pj:hover img {
-    transform: scale(1.04);
-}
-.dev {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: black;
-}
 /* ============================================================
    GALERIA
    ============================================================ */
@@ -774,6 +750,32 @@ body {
 .imggaleria:hover{
     transform: scale(1.05);
 }
+
+
+/* ============================================================
+   PROJETOS
+   ============================================================ */
+.pj {
+    transition-duration: .3s;
+}
+.pj:hover {
+    border-color: rgb(50, 85, 50);
+    transform: translateY(-5px);
+}
+.pj img {
+    transition: transform .4s ease;
+}
+.pj:hover img {
+    transform: scale(1.04);
+}
+.dev {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+}
+
+
 /* ============================================================
    ÁREAS DE ATUAÇÃO
    ============================================================ */

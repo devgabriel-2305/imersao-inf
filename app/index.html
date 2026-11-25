@@ -43,7 +43,7 @@
                  lg:grid-cols-[auto_1fr] xl:grid-cols-[1fr_auto_1fr]">
 
         <div
-            class="absolute inset-0 rounded-full border border-white/10 bg-white/15 backdrop-blur-sm lg:animate-expand lg:backdrop-blur-md">
+            class="nav-bg absolute inset-0 rounded-full border border-white/10 bg-white/15 backdrop-blur-sm lg:animate-expand lg:backdrop-blur-md">
         </div>
 
         <a href="#home" aria-label="Informática - início"
@@ -56,12 +56,12 @@
                 class="text-sm font-bold tracking-wide transition-colors duration-300 group-hover/logo:text-blue-500">INFORMÁTICA</span>
         </a>
 
-        <nav id="links" aria-label="Principal"
-            class="relative flex items-center gap-5 text-[.8rem] tracking-wide
-                lg:justify-self-end xl:justify-self-center xl:gap-8 lg:max-xl:[&_i]:hidden
-                max-lg:invisible max-lg:absolute max-lg:inset-x-0 max-lg:top-[calc(100%+.5rem)] max-lg:-translate-y-1.5 max-lg:flex-col max-lg:items-stretch max-lg:gap-0
-                max-lg:rounded-3xl max-lg:bg-neutral-900/90 max-lg:py-2 max-lg:opacity-0 max-lg:transition
-                max-lg:group-data-[open]:visible max-lg:group-data-[open]:translate-y-0 max-lg:group-data-[open]:opacity-100">
+       <nav id="links" aria-label="Principal"
+    class="relative flex items-center gap-5 text-[.8rem] tracking-wide
+        lg:justify-self-end xl:justify-self-center xl:gap-8 lg:max-xl:[&_i]:hidden
+        max-lg:invisible max-lg:absolute max-lg:inset-x-0 max-lg:top-[calc(100%+.5rem)] max-lg:flex-col max-lg:items-stretch max-lg:gap-0
+        max-lg:rounded-3xl max-lg:bg-neutral-900/90 max-lg:py-2 max-lg:opacity-0 max-lg:transition
+        max-lg:group-data-[open]:visible max-lg:group-data-[open]:opacity-100">
             <a href="#home"
                 class="nav-link inline-flex items-center gap-2 whitespace-nowrap max-lg:px-5 max-lg:py-3 lg:animate-fade"
                 style="animation-delay:.8s"><i class="bi bi-house-door" aria-hidden="true"></i>HOME</a>
@@ -780,15 +780,18 @@
             </div>
 
             <!-- Parte inferior -->
-            <div class="footer-bottom">
-                <p>
-                    ©️ 2026
-                </p>
+           <div class="footer-bottom">
+    <p>©️ 2026</p>
 
-                <span>
-                    Informática é o poder.
-                </span>
-            </div>
+    <p class="footer-credits">
+        Desenvolvido por
+        <strong>Gabriel Damião</strong>,
+        <strong>Caleb Lira</strong>,
+        <strong>Eduardo Oliveira</strong>
+    </p>
+
+    <span>Informática é o poder.</span>
+</div>
 
         </div>
     </footer>
